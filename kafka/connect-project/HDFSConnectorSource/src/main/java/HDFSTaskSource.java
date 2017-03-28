@@ -57,7 +57,7 @@ public class HDFSTaskSource extends SourceTask {
         List<SourceRecord> lista = new ArrayList<SourceRecord>();
 
 
-
+        /*
 
         System.out.println("Poll");
         logger.info("Starting Camera Source Task...");
@@ -137,7 +137,8 @@ public class HDFSTaskSource extends SourceTask {
             logger.info("Final de producción: " + timeStampFinal);
         }
 
-        return null;
+        */
+        return lista;
     }
 
     public void stop() {

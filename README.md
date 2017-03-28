@@ -24,10 +24,16 @@ Requisito: Definición correcta de la variable de entorno CLASSPATH
 
 Standalone Mode
 
-
+./kafka/bin/connect-standalone.sh ./kafka/connect-config/worker.properties ./kafka/connect-config/connect-console-source.properties
 
 
 Distributed Mode
+
+
+
+Si el conector se crea correctamente se puede ver en el servidor
+
+http://172.25.0.3:8083/connectors
 
 
 # Resumen de Versiones

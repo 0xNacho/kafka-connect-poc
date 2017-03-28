@@ -13,7 +13,7 @@ ENV MAVEN_VERSION=3.3.9
 ENV M2_HOME=/usr/lib/mvn/
 ENV M2=$M2_HOME/bin
 ENV PATH $PATH:$M2_HOME:$M2
-
+ENV CLASSPATH=/opt/kafka/libs/*:/opt/kafka/connectors/*
 
 ## Install
 # Java 8
@@ -50,7 +50,12 @@ COPY /connect-config/ /opt/kafka/connect-config/
 RUN mkdir -p /opt/kafka/connectors
 RUN mkdir -p /opt/kafka/connectors-projects
 COPY /connect-project/ /opt/kafka/connectors-projects
-RUN cd /opt/kafka/connectors-projects && mvn clean package && cp /opt/kafka/connectors-projects/out/artifacts/kafka_connect_poc_jar2/kafka-connect-poc.jar /opt/kafka/connectors/kafka-connect-poc.jar
+RUN cd /opt/kafka/connectors-projects && mvn clean package
+RUN cp /opt/kafka/connectors-projects/jars/* /opt/kafka/connectors/ 
+
+# CLASSPATH
+
+RUN export CLASSPATH=/opt/kafka/libs/*:/opt/kafka/connectors/*
 
 ## Entrypoint
 COPY entrypoint.sh /opt/entrypoint.sh
