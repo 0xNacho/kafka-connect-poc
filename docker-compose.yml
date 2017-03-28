@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  kafka:
+    image: kafka:cv-poc
+    hostname: kafka
+    container_name: kafka
+    domainname: computer-vision
+    networks: 
+      - computer-vision
+
+  zookeeper:
+    image: zookeeper:cv-poc
+    hostname: zookeeper
+    container_name: zookeeper
+    domainname: computer-vision
+    networks: 
+      - computer-vision
+
+networks:
+  computer-vision:
+    driver: bridge
