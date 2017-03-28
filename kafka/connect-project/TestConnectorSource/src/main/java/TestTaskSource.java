@@ -51,6 +51,7 @@ public class TestTaskSource extends SourceTask {
                 Map sourcePartition = Collections.singletonMap("filename", filename);
                 Map sourceOffset = Collections.singletonMap("position", line);
                 lista.add(new SourceRecord(sourcePartition, sourceOffset, topic, Schema.STRING_SCHEMA, line));
+                line = br.readLine();
             }
 
         } catch (FileNotFoundException e) {
