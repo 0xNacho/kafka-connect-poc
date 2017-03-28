@@ -39,6 +39,9 @@ http://172.25.0.3:8083/connectors
 # Resumen de Versiones
 
 JAVA_VERSION=1.8
+
 KAFKA_VERSION=0.10.0.0
+
 SCALA_VERSION=2.11
+
 MAVEN_VERSION=3.3.9
