@@ -1,5 +1,6 @@
-package Connector;
-
+/**
+ * Created by pablo.mesa on 28/03/17.
+ */
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.common.utils.AppInfoParser;
 import org.apache.kafka.connect.source.SourceConnector;
@@ -13,12 +14,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import Task.CamerasSourceTask;
-
 /**
  * Created by pablo.mesa on 23/03/17.
  */
-public class CamerasConnectorSource extends SourceConnector {
+public class HDFSConnectorSource extends SourceConnector {
 
     public static final String TOPIC_CONFIG = "topics";
     public static final String FILE_CONFIG = "file";
@@ -30,7 +29,7 @@ public class CamerasConnectorSource extends SourceConnector {
     private String filename;
 
     // Logs
-    private static final Logger log = LoggerFactory.getLogger(CamerasConnectorSource.class);
+    private static final Logger log = LoggerFactory.getLogger(HDFSConnectorSource.class);
 
     // Constructor
 
@@ -68,7 +67,7 @@ public class CamerasConnectorSource extends SourceConnector {
     }
 
     public Class<? extends Task> taskClass() {
-        return CamerasSourceTask.class;
+        return HDFSTaskSource.class;
     }
 
     public List<Map<String, String>> taskConfigs(int maxTasks) {

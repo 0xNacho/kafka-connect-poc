@@ -4,16 +4,55 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>groupId</groupId>
-    <artifactId>kafka-connect-poc</artifactId>
+    <groupId>tree.kafkaconnect.poc</groupId>
+    <artifactId>project-root</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>KafkaConnect-POC</name>
+    <packaging>pom</packaging>
+    <modules>
+        <module>HDFSConnectorSource</module>
+        <module>HDFSConnectorSink</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <slf4j.version>1.6.6</slf4j.version>
+        <logback.version>1.0.7</logback.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+
+
+
+            <plugin>
+                <groupId>tree.kafkaconnect.poc</groupId>
+                <artifactId>HDFSConnectorSink</artifactId>
+                <version>1.0-SNAPSHOT</version>
+                <configuration>
+                    <outputDirectory>../jars</outputDirectory>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.apache.kafka/connect-api -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>connect-api</artifactId>
-            <version>0.9.0.1</version>
+            <version>0.10.0.0</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
@@ -52,12 +91,6 @@
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet-core</artifactId>
             <version>2.17</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-grizzly2-servlet</artifactId>
-            <version>2.15</version>
         </dependency>
 
     </dependencies>

@@ -1,17 +1,20 @@
-package Connector;
+import org.apache.kafka.connect.sink.SinkConnector;
+
+/**
+ * Created by pablo.mesa on 28/03/17.
+ */
 
 import org.apache.kafka.common.config.ConfigDef;
 import org.apache.kafka.common.utils.AppInfoParser;
 import org.apache.kafka.connect.connector.Task;
-import org.apache.kafka.connect.sink.SinkConnector;
+
 
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by pablo.mesa on 23/03/17.
- */
-public class CamerasSinkConnector extends SinkConnector {
+
+
+public class HDFSConnectorSink extends SinkConnector{
 
 
     public String version() {

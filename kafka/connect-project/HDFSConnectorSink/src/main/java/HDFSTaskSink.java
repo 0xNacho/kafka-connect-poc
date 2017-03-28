@@ -1,5 +1,6 @@
-package Task;
-
+/**
+ * Created by pablo.mesa on 28/03/17.
+ */
 import org.apache.kafka.clients.consumer.OffsetAndMetadata;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.utils.AppInfoParser;
@@ -12,7 +13,7 @@ import java.util.Map;
 /**
  * Created by pablo.mesa on 23/03/17.
  */
-public class CamerasSinkTask extends SinkTask{
+public class HDFSTaskSink extends SinkTask{
 
     public String version() {
         return AppInfoParser.getVersion();

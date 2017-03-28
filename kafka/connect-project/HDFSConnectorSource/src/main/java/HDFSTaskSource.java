@@ -1,7 +1,3 @@
-package Task;
-
-import Connector.CamerasConnectorSource;
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -24,11 +20,7 @@ import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * Created by pablo.mesa on 23/03/17.
- *
- */
-public class CamerasSourceTask extends SourceTask {
+public class HDFSTaskSource extends SourceTask {
 
     // Variables
     private String topic;
@@ -38,10 +30,10 @@ public class CamerasSourceTask extends SourceTask {
     protected String HDFS = "hdfs://192.168.4.245:8020";
     protected String TABLE = "/proteus/final/sorted/000000_0";
     protected Configuration conf;
-    private static Producer<String, String> producer;
+    protected static Producer<String, String> producer;
 
     // Logger
-    private static final Logger logger = LoggerFactory.getLogger(CamerasSourceTask.class);
+    protected static final Logger logger = LoggerFactory.getLogger(HDFSTaskSource.class);
 
 
     public String version() { return AppInfoParser.getVersion();  }
@@ -52,11 +44,11 @@ public class CamerasSourceTask extends SourceTask {
 
         System.out.println("MAP: " + map);
 
-        filename = map.get(CamerasConnectorSource.FILE_CONFIG);
-        topic = map.get(CamerasConnectorSource.TOPIC_CONFIG);
+        filename = map.get(HDFSConnectorSource.FILE_CONFIG);
+        topic = map.get(HDFSConnectorSource.TOPIC_CONFIG);
 
         System.out.println("Filename: " + filename + " , Topic: " + topic);
-}
+    }
 
     public List<SourceRecord> poll() throws InterruptedException {
 
@@ -142,8 +134,8 @@ public class CamerasSourceTask extends SourceTask {
             }
 
             timeStampFinal = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
-                logger.info("Final de producción: " + timeStampFinal);
-            }
+            logger.info("Final de producción: " + timeStampFinal);
+        }
 
         return null;
     }
