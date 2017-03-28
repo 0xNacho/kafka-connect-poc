@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * Created by pablo.mesa on 23/03/17.
  */
-public class HDFSTaskSink extends SinkTask{
+public class TestTaskSink extends SinkTask{
 
     public String version() {
         return AppInfoParser.getVersion();

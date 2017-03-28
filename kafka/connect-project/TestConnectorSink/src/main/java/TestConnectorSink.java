@@ -14,7 +14,7 @@ import java.util.Map;
 
 
 
-public class HDFSConnectorSink extends SinkConnector{
+public class TestConnectorSink extends SinkConnector{
 
 
     public String version() {

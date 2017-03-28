@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>tree.kafkaconnect.poc</groupId>
-    <artifactId>HDFSConnectorSink</artifactId>
+    <artifactId>TestConnectorSink</artifactId>
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
@@ -45,12 +45,12 @@
                         <artifactItems>
                             <artifactItem>
                                 <groupId>tree.kafkaconnect.poc</groupId>
-                                <artifactId>HDFSConnectorSink</artifactId>
+                                <artifactId>TestConnectorSink</artifactId>
                                 <version>1.0-SNAPSHOT</version>
                                 <type>jar</type>
                                 <overWrite>false</overWrite>
                                 <outputDirectory>../jars</outputDirectory>
-                                <destFileName>HDFSConnectorSink.jar</destFileName>
+                                <destFileName>TestConnectorSink.jar</destFileName>
                             </artifactItem>
                         </artifactItems>
                         <outputDirectory>${project.build.directory}/wars</outputDirectory>

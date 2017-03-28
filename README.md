@@ -24,6 +24,17 @@ Requisito: Definición correcta de la variable de entorno CLASSPATH
 
 Standalone Mode
 
+TestConnector
+
+Necesita un fichero file.txt en la carpeta dataset
+
+sudo docker exec -it kafka bash
+
+./bin/connect-standalone.sh ./connect-config/test-connector.properties ./connect-config/test-connector-source.properties
+
+
+
+
 ./kafka/bin/connect-standalone.sh ./kafka/connect-config/worker.properties ./kafka/connect-config/connect-console-source.properties
 
 
