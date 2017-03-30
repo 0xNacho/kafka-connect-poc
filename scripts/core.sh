@@ -3,11 +3,11 @@
 # Ititialization
 
 mainmenu () {
-  echo "Press 1 - Install Proteus Environment"
+  echo "Press 1 - Install Kafka Connect Environment"
   echo "Press 2 - Check Containers"
   echo "Press 3 - Stop Containers"
   echo "Press 4 - Delete Containers"
-  echo "Press 5 - Unistall Proteus Environment"
+  echo "Press 5 - Unistall Kafka Connect  Environment"
   read -n 1 -p "Input Selection:" mainmenuinput
   echo ""
   if [ "$mainmenuinput" = "1" ]; then
