@@ -22,7 +22,7 @@ sudo docker build -t base:cv-poc ./base/.
 sudo docker build -t ssh:cv-poc ./ssh/.
 sudo docker build -t zookeeper:cv-poc ./zookeeper/.
 sudo docker build -t kafka:cv-poc ./kafka/.
-
+sudo docker build -t landoop:cv-poc ./landoop-ui/.
 
 echo "Docker Compose"
 
@@ -30,3 +30,4 @@ echo "Docker Compose"
 
 sudo docker-compose up -d zookeeper
 sudo docker-compose up -d kafka
+sudo docker-compose up -d landoop

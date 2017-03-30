@@ -17,6 +17,13 @@ services:
     domainname: computer-vision
     networks: 
       - computer-vision
+  landoop:
+    image: landoop:cv-poc
+    hostname: landoop
+    container_name: landoop
+    domainname: computer-vision
+    networks:
+      - computer-vision
 
 networks:
   computer-vision:
