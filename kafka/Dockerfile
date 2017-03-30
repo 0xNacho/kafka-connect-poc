@@ -42,7 +42,6 @@ COPY supervisor-kafka.ini /etc/supervisor.d/
 
 # Config
 
-RUN mkdir -p /opt/kakfa/connect-config/
 COPY /connect-config/ /opt/kafka/connect-config/
 
 # Connector

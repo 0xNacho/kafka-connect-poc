@@ -8,7 +8,8 @@ services:
     domainname: computer-vision
     networks: 
       - computer-vision
-
+    volumes:
+      - ./dataset/:/opt/dataset
   zookeeper:
     image: zookeeper:cv-poc
     hostname: zookeeper
