@@ -6,15 +6,15 @@ Entorno dockerizado heredado de Proteus para una prueba de concepto entre línea
 
 # Elementos clave dentro del directorio kafka
 
-/connect-config/
+``` /connect-config/ ```
 
 Directorio con los ficheros de configuración que dentro del contenedor se mapena en el directorio /opt/kafka/connector-config/
 
-/connect-project/
+``` /connect-project/ ```
 
 Código del proyecto del conector que dentro del contenedor se mapea en el directorio /opt/kafka/connectors-projects. Una vez se cree el fichero .jar este se mueve automáticamente a la carepta /opt/kafka/connectors/ 
 
-/Dockerfile
+``` /Dockerfile ```
 
 Fichero de configuración del contenedor de Kafka
 
@@ -28,14 +28,10 @@ TestConnector
 
 Necesita un fichero file.txt en la carpeta dataset
 
-sudo docker exec -it kafka bash
+``` sudo docker exec -it kafka bash ```
 
-./bin/connect-standalone.sh ./connect-config/test-connector.properties ./connect-config/test-connector-source.properties
-
-
-
-
-./kafka/bin/connect-standalone.sh ./kafka/connect-config/worker.properties ./kafka/connect-config/connect-console-source.properties
+``` ./bin/connect-standalone.sh ./connect-config/test-connector.properties ./connect-config/test-connector-source.properties ```
+``` ./kafka/bin/connect-standalone.sh ./kafka/connect-config/worker.properties ./kafka/connect-config/connect-console-source.properties ```
 
 
 Distributed Mode
